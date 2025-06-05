@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node Signiﬁcance Analysis in Complex Networks using Machine Learning and Centrality Measures</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Bootstrap CSS -->
+     <style>
+        header {
+    margin-left: 100px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    margin-top: 20px;
+    font-size: 20px;
+    text-shadow: .5px .5px .5px brown;
+}
+
+
+article {
+    padding-left: 108px;
+    padding-top: 15px;
+    font-family: Arial, sans-serif;
+    color: white;
+    background-color: brown;
+    width: 102%;
+    height: 50px;
+    margin-top: 15px;
+    margin-left: -10px;
+}
+.container-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Adjust this to change vertical alignment */
+    height: 800px;
+    width: 100%;
+    margin-top: 10px; /* Add margin from the top */
+}
+form {
+    
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+
+    height: 900px;
+    margin-top: 5px;
+    width: 880px;
+    margin-left: 200px;
+    margin-right: 200px;
+    background-color: white;
+
+}
+.result-heading {
+    color: white;
+    background-color: brown;
+    font-family: Arial, sans-serif;
+    padding: 15px;
+    text-align: center;
+    margin: -9px -10px 0 -10px;
+}
+/* Output form css Start */
+.result-heading2 {
+    color: white;
+    background-color: brown;
+    font-family: Arial, sans-serif;
+    padding: 10px;
+    text-align: center;
+    margin-top: 20px;
+}
+table {
+    text-align: center;
+    width: 500px;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+.left-panel {
+    width: 350px;
+}
+.table-area {
+    display: flex;
+}
+thead {
+    background-color: brown;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.heart-pic {
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-right: 5px;
+}
+/* output form css end */
+
+/* Input form css Start */
+.form-group {
+    margin-top: 20px;
+    display: flex;
+    margin-bottom: 20px; /* Reduce space between label and input */
+    margin-left: 100px;
+}
+.form-group label {
+    width: 400px; /* Set the width of the labels */
+    margin-right: 50px; /* Add space between label and input */
+    line-height: 28px;
+}
+.form-group input {
+    flex: 1; /* Let inputs take up remaining space */
+    width: 5px; /* Set the width of the inputs */
+    margin-right: 100px;
+    padding: 5px;
+    height: 40px;
+}
+
+.result-area {
+    width: 100%; /* Adjust result area width to your preference */
+    height: auto; /* Allow height to adjust based on content */
+}
+
+.custom-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    width: 200px;
+    margin-right: 350px;
+    margin-left: 350px;
+    margin-bottom: 20px;
+    
+}
+
+.custom-button:hover {
+    background-color: #0056b3;
+}
+/* Add these styles to your CSS */
+.result-heading2 {
+text-align: center;
+margin-top: 20px;
+}
+
+.result-heading2.green {
+color: green;
+}
+
+.result-heading2.red {
+color: red;
+}
+
+body {
+background-image: url('../static/img/index.jpg'); 
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center; 
+color: #343a40; 
+}
+
+/* input form css end */
+     </style>
+   
+</head>
+<body>
+    <header style="background: linear-gradient(to right, #007bff, #00c6ff); color: white; text-align: center; padding: 20px; font-size: 28px; font-weight: bold; font-family: Arial, sans-serif; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);">
+         Node Signiﬁcance Analysis in Complex Networks using Machine Learning and Centrality Measures
+    </header>
+</body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Node Signiﬁcance Analysis in Complex Networks using Machine Learning and Centrality Measures</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <font size="5px">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item ">
+                <a class="nav-link" href="/m" >Home </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/p">Predict</a>
+            </li>           
+            <li class="nav-item">
+                <a class="nav-link" href="/">Logout</a>
+            </li>
+        </ul>
+    </font>
+    </div>
+</nav>
+    <!--test_input =[40, 'M', 'ATA', 140, 289, 0, 'Normal', 172, 'N', 0.0, 'Up']-->
+   <div class="container-center"> 
+    <form id="inputForm" class="border border-black p-2" method="POST" action="{{ url_for('predict') }}">
+        <div class="result-heading">Node Signiﬁcance Analysis Prediction</div>
+        <div class="result-area">
+            <div class="form-group">
+                <label class="form-label">Degree Centrality:</label>
+                <input type="number" step="any" id="degree_centrality" name="degree_centrality" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Betweenness Centrality:</label>
+                <input type="number" step="any" id="betweenness_centrality" name="betweenness_centrality" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Closeness Centrality:</label>
+                <input type="number" step="any" id="closeness_centrality" name="closeness_centrality" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Eigenvector Centrality:</label>
+                <input type="number" step="any" id="eigenvector_centrality" name="eigenvector_centrality" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Community Assignment:</label>
+                <input type="text" id="community_assignment" name="community_assignment" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Node Type:</label>
+                <input type="text" id="node_type" name="node_type" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Clustering Coefficient:</label>
+                <input type="number" step="any" id="clustering_coefficient" name="clustering_coefficient" class="form-control" required>
+            </div>
+        </div>
+        <center><button type="submit" class="btn btn-primary mt-2">Predict Performance</button></center>
+    </form>
+</div>
+
+    
+    
+                
+             
+                <div class="click-for-result">
+                    <div class="custom-button">
+                        <button type="submit">Predict</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

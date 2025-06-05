@@ -1,0 +1,156 @@
+header {
+    margin-left: 100px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    margin-top: 20px;
+    font-size: 20px;
+    text-shadow: .5px .5px .5px brown;
+}
+
+
+article {
+    padding-left: 108px;
+    padding-top: 15px;
+    font-family: Arial, sans-serif;
+    color: white;
+    background-color: brown;
+    width: 102%;
+    height: 50px;
+    margin-top: 15px;
+    margin-left: -10px;
+}
+.container-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Adjust this to change vertical alignment */
+    height: 800px;
+    width: 100%;
+    margin-top: 10px; /* Add margin from the top */
+}
+form {
+    
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+
+    height: 900px;
+    margin-top: 5px;
+    width: 880px;
+    margin-left: 200px;
+    margin-right: 200px;
+    background-color: white;
+
+}
+.result-heading {
+    color: white;
+    background-color: brown;
+    font-family: Arial, sans-serif;
+    padding: 15px;
+    text-align: center;
+    margin: -9px -10px 0 -10px;
+}
+/* Output form css Start */
+.result-heading2 {
+    color: white;
+    background-color: brown;
+    font-family: Arial, sans-serif;
+    padding: 10px;
+    text-align: center;
+    margin-top: 20px;
+}
+table {
+    text-align: center;
+    width: 500px;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+.left-panel {
+    width: 350px;
+}
+.table-area {
+    display: flex;
+}
+thead {
+    background-color: brown;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.heart-pic {
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-right: 5px;
+}
+/* output form css end */
+
+/* Input form css Start */
+.form-group {
+    margin-top: 20px;
+    display: flex;
+    margin-bottom: 20px; /* Reduce space between label and input */
+    margin-left: 100px;
+}
+.form-group label {
+    width: 400px; /* Set the width of the labels */
+    margin-right: 50px; /* Add space between label and input */
+    line-height: 28px;
+}
+.form-group input {
+    flex: 1; /* Let inputs take up remaining space */
+    width: 5px; /* Set the width of the inputs */
+    margin-right: 100px;
+    padding: 5px;
+    height: 40px;
+}
+
+.result-area {
+    width: 100%; /* Adjust result area width to your preference */
+    height: auto; /* Allow height to adjust based on content */
+}
+
+.custom-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    width: 200px;
+    margin-right: 350px;
+    margin-left: 350px;
+    margin-bottom: 20px;
+    
+}
+
+.custom-button:hover {
+    background-color: #0056b3;
+}
+/* Add these styles to your CSS */
+.result-heading2 {
+text-align: center;
+margin-top: 20px;
+}
+
+.result-heading2.green {
+color: green;
+}
+
+.result-heading2.red {
+color: red;
+}
+
+body {
+background-image: url('../img/index.jpg'); 
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center; 
+color: #343a40; 
+}
+
+/* input form css end */
